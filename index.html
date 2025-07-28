@@ -179,10 +179,11 @@
 
         /* Hero Section */
         .hero {
-            min-height: 100vh;
+            height: 100vh;
             background: var(--primary-dark);
             display: flex;
             align-items: center;
+            justify-content: center;
             position: relative;
             overflow: hidden;
         }
@@ -248,10 +249,16 @@
             padding: 0 2rem;
             position: relative;
             z-index: 1;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
         }
 
         .hero h1 {
-            font-size: 4rem;
+            font-size: clamp(3rem, 5vw, 4.5rem);
             color: var(--text-light);
             margin-bottom: 1.5rem;
             line-height: 1.1;
@@ -263,10 +270,10 @@
         }
 
         .hero-subtitle {
-            font-size: 1.3rem;
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
             color: var(--text-gray);
             margin-bottom: 3rem;
-            max-width: 600px;
+            max-width: 700px;
             line-height: 1.8;
             animation: fadeInUp 1s ease 0.2s;
             animation-fill-mode: both;
@@ -529,11 +536,12 @@
 
         .brands-title {
             text-align: center;
-            color: var(--text-gray);
-            font-size: 1rem;
+            color: var(--text-light);
+            font-size: 1.2rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 2rem;
+            font-weight: 600;
         }
 
         .brands-slider {
@@ -553,12 +561,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            filter: grayscale(100%) opacity(0.5);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             transition: all 0.3s ease;
         }
 
         .brand-item:hover {
-            filter: grayscale(0%) opacity(1);
+            color: var(--accent-cyan);
+            transform: scale(1.1);
         }
 
         @keyframes slide {
@@ -695,26 +708,10 @@
     <nav>
         <div class="nav-container">
             <a href="#home" class="logo">
-                <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Logo CMC más pequeño y preciso -->
-                    <g transform="scale(0.8) translate(5, 5)">
-                        <!-- Círculo exterior -->
-                        <circle cx="20" cy="25" r="18" stroke="white" stroke-width="1.5" fill="none"/>
-                        
-                        <!-- Letra C -->
-                        <path d="M 28 17 A 11 11 0 1 0 28 33" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
-                        
-                        <!-- Check que forma parte de la M -->
-                        <path d="M 14 25 L 19 30 L 29 20" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                        
-                        <!-- Línea vertical de la M -->
-                        <path d="M 36 18 L 36 32" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-                        
-                        <!-- Conexión superior de la M -->
-                        <path d="M 29 20 L 36 25" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-                    </g>
-                </svg>
-                CMC
+                <div style="width: 45px; height: 45px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--primary-dark);">
+                    CMC
+                </div>
+                <span style="margin-left: 10px;">CMC</span>
             </a>
             
             <ul class="nav-links">
@@ -745,14 +742,11 @@
                 </p>
                 
                 <div class="cta-buttons">
-                    <a href="#contact" class="cta-primary">
-                        Solicitar Cotización
+                    <a href="#products" class="cta-primary">
+                        Explorar Catálogo
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                             <path d="M5 12h14m-7-7l7 7-7 7" stroke-width="2" stroke-linecap="round"/>
                         </svg>
-                    </a>
-                    <a href="#products" class="cta-secondary">
-                        Explorar Catálogo
                     </a>
                 </div>
             </div>
@@ -791,6 +785,26 @@
         </div>
     </section>
 
+    <!-- Stats Section -->
+    <section style="background: #1e293b; padding: 4rem 0;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 900px; margin: 0 auto;">
+                <div style="text-align: center; padding: 2rem; background: rgba(255,255,255,0.05); border-radius: 15px; border: 1px solid rgba(255,255,255,0.1);">
+                    <div style="font-size: 3rem; font-weight: bold; color: #06b6d4; margin-bottom: 0.5rem;">10+</div>
+                    <div style="color: #e2e8f0; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;">Años de Experiencia</div>
+                </div>
+                <div style="text-align: center; padding: 2rem; background: rgba(255,255,255,0.05); border-radius: 15px; border: 1px solid rgba(255,255,255,0.1);">
+                    <div style="font-size: 3rem; font-weight: bold; color: #06b6d4; margin-bottom: 0.5rem;">33</div>
+                    <div style="color: #e2e8f0; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;">Bases Nacionales</div>
+                </div>
+                <div style="text-align: center; padding: 2rem; background: rgba(255,255,255,0.05); border-radius: 15px; border: 1px solid rgba(255,255,255,0.1);">
+                    <div style="font-size: 3rem; font-weight: bold; color: #06b6d4; margin-bottom: 0.5rem;">500+</div>
+                    <div style="color: #e2e8f0; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;">Clientes Activos</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Products Section -->
     <section class="products" id="products">
         <div class="container">
@@ -800,7 +814,7 @@
             </p>
             
             <div class="products-grid">
-                <div class="product-card">
+                <div class="product-card" style="background-image: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('https://images.unsplash.com/photo-1609205807490-b2f7e2e8b0b5?w=400'); background-size: cover; background-position: bottom;">
                     <span class="product-icon">🔩</span>
                     <h3 class="product-title">Tornillería Industrial</h3>
                     <p class="product-description">
@@ -813,7 +827,7 @@
                     </ul>
                 </div>
                 
-                <div class="product-card">
+                <div class="product-card" style="background-image: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=400'); background-size: cover; background-position: bottom;">
                     <span class="product-icon">🔧</span>
                     <h3 class="product-title">Herramientas Profesionales</h3>
                     <p class="product-description">
@@ -826,7 +840,7 @@
                     </ul>
                 </div>
                 
-                <div class="product-card">
+                <div class="product-card" style="background-image: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=400'); background-size: cover; background-position: bottom;">
                     <span class="product-icon">🏗️</span>
                     <h3 class="product-title">Ferretería y Construcción</h3>
                     <p class="product-description">
@@ -839,7 +853,7 @@
                     </ul>
                 </div>
                 
-                <div class="product-card">
+                <div class="product-card" style="background-image: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('https://images.unsplash.com/photo-1562113230-84c2c6b89b01?w=400'); background-size: cover; background-position: bottom;">
                     <span class="product-icon">🎨</span>
                     <h3 class="product-title">Pintura Automotriz</h3>
                     <p class="product-description">
@@ -852,7 +866,7 @@
                     </ul>
                 </div>
                 
-                <div class="product-card">
+                <div class="product-card" style="background-image: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('https://images.unsplash.com/photo-1563453392212-326f5e854473?w=400'); background-size: cover; background-position: bottom;">
                     <span class="product-icon">🧹</span>
                     <h3 class="product-title">Productos de Limpieza</h3>
                     <p class="product-description">
@@ -865,7 +879,7 @@
                     </ul>
                 </div>
                 
-                <div class="product-card">
+                <div class="product-card" style="background-image: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=400'); background-size: cover; background-position: bottom;">
                     <span class="product-icon">⚙️</span>
                     <h3 class="product-title">Refacciones Especiales</h3>
                     <p class="product-description">
@@ -880,6 +894,531 @@
             </div>
         </div>
     </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services" style="background: var(--primary-dark); padding: 6rem 0; position: relative; overflow: hidden;">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Nuestros Servicios</h2>
+            <p class="section-subtitle" style="color: var(--text-gray);">
+                Más que un proveedor, somos su socio estratégico en soluciones industriales
+            </p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-top: 4rem;">
+                <!-- Servicio 1 -->
+                <div style="background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(6, 182, 212, 0.1)); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 3rem; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: radial-gradient(circle, rgba(37, 99, 235, 0.3) 0%, transparent 70%); filter: blur(40px);"></div>
+                    <div style="position: relative; z-index: 1;">
+                        <div style="width: 70px; height: 70px; background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan)); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem; font-size: 2rem;">
+                            🚚
+                        </div>
+                        <h3 style="color: white; font-size: 1.8rem; margin-bottom: 1rem;">Logística y Entrega</h3>
+                        <p style="color: var(--text-gray); line-height: 1.8; margin-bottom: 2rem;">
+                            Contamos con una red de distribución que cubre todo el territorio nacional. 
+                            Entregas puntuales y seguras en sus 33 bases.
+                        </p>
+                        <ul style="list-style: none; color: var(--text-gray);">
+                            <li style="padding: 0.5rem 0; position: relative; padding-left: 2rem;">
+                                <span style="position: absolute; left: 0; color: var(--accent-green);">✓</span>
+                                Entrega en 24-48 horas
+                            </li>
+                            <li style="padding: 0.5rem 0; position: relative; padding-left: 2rem;">
+                                <span style="position: absolute; left: 0; color: var(--accent-green);">✓</span>
+                                Rastreo en tiempo real
+                            </li>
+                            <li style="padding: 0.5rem 0; position: relative; padding-left: 2rem;">
+                                <span style="position: absolute; left: 0; color: var(--accent-green);">✓</span>
+                                Manejo de urgencias
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(37, 99, 235, 0.1)); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 3rem; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: radial-gradient(circle, rgba(16, 185, 129, 0.3) 0%, transparent 70%); filter: blur(40px);"></div>
+                    <div style="position: relative; z-index: 1;">
+                        <div style="width: 70px; height: 70px; background: linear-gradient(135deg, var(--accent-green), var(--accent-cyan)); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem; font-size: 2rem;">
+                            💼
+                        </div>
+                        <h3 style="color: white; font-size: 1.8rem; margin-bottom: 1rem;">Asesoría Técnica</h3>
+                        <p style="color: var(--text-gray); line-height: 1.8; margin-bottom: 2rem;">
+                            Nuestro equipo de expertos le ayuda a seleccionar los productos más adecuados 
+                            para sus proyectos y necesidades específicas.
+                        </p>
+                        <ul style="list-style: none; color: var(--text-gray);">
+                            <li style="padding: 0.5rem 0; position: relative; padding-left: 2rem;">
+                                <span style="position: absolute; left: 0; color: var(--accent-green);">✓</span>
+                                Análisis de requerimientos
+                            </li>
+                            <li style="padding: 0.5rem 0; position: relative; padding-left: 2rem;">
+                                <span style="position: absolute; left: 0; color: var(--accent-green);">✓</span>
+                                Recomendaciones personalizadas
+                            </li>
+                            <li style="padding: 0.5rem 0; position: relative; padding-left: 2rem;">
+                                <span style="position: absolute; left: 0; color: var(--accent-green);">✓</span>
+                                Soporte post-venta
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div style="background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(16, 185, 129, 0.1)); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 3rem; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: radial-gradient(circle, rgba(6, 182, 212, 0.3) 0%, transparent 70%); filter: blur(40px);"></div>
+                    <div style="position: relative; z-index: 1;">
+                        <div style="width: 70px; height: 70px; background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue)); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem; font-size: 2rem;">
+                            📊
+                        </div>
+                        <h3 style="color: white; font-size: 1.8rem; margin-bottom: 1rem;">Portal CMC Digital</h3>
+                        <p style="color: var(--text-gray); line-height: 1.8; margin-bottom: 2rem;">
+                            Plataforma digital para gestionar pedidos, cotizaciones y seguimiento 
+                            en tiempo real de todas sus operaciones.
+                        </p>
+                        <ul style="list-style: none; color: var(--text-gray);">
+                            <li style="padding: 0.5rem 0; position: relative; padding-left: 2rem;">
+                                <span style="position: absolute; left: 0; color: var(--accent-green);">✓</span>
+                                Cotizaciones instantáneas
+                            </li>
+                            <li style="padding: 0.5rem 0; position: relative; padding-left: 2rem;">
+                                <span style="position: absolute; left: 0; color: var(--accent-green);">✓</span>
+                                Historial de compras
+                            </li>
+                            <li style="padding: 0.5rem 0; position: relative; padding-left: 2rem;">
+                                <span style="position: absolute; left: 0; color: var(--accent-green);">✓</span>
+                                Reportes y análisis
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Servicio 4 -->
+                <div style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(37, 99, 235, 0.1)); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 3rem; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: radial-gradient(circle, rgba(239, 68, 68, 0.3) 0%, transparent 70%); filter: blur(40px);"></div>
+                    <div style="position: relative; z-index: 1;">
+                        <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #ef4444, #f59e0b); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem; font-size: 2rem;">
+                            🏭
+                        </div>
+                        <h3 style="color: white; font-size: 1.8rem; margin-bottom: 1rem;">Proyectos Especiales</h3>
+                        <p style="color: var(--text-gray); line-height: 1.8; margin-bottom: 2rem;">
+                            Desarrollamos soluciones a medida para proyectos industriales de gran escala 
+                            con requerimientos específicos.
+                        </p>
+                        <ul style="list-style: none; color: var(--text-gray);">
+                            <li style="padding: 0.5rem 0; position: relative; padding-left: 2rem;">
+                                <span style="position: absolute; left: 0; color: var(--accent-green);">✓</span>
+                                Abastecimiento programado
+                            </li>
+                            <li style="padding: 0.5rem 0; position: relative; padding-left: 2rem;">
+                                <span style="position: absolute; left: 0; color: var(--accent-green);">✓</span>
+                                Inventarios dedicados
+                            </li>
+                            <li style="padding: 0.5rem 0; position: relative; padding-left: 2rem;">
+                                <span style="position: absolute; left: 0; color: var(--accent-green);">✓</span>
+                                Precios preferenciales
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Servicio 5 -->
+                <div style="background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(239, 68, 68, 0.1)); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 3rem; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: radial-gradient(circle, rgba(168, 85, 247, 0.3) 0%, transparent 70%); filter: blur(40px);"></div>
+                    <div style="position: relative; z-index: 1;">
+                        <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #a855f7, #ec4899); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem; font-size: 2rem;">
+                            🔍
+                        </div>
+                        <h3 style="color: white; font-size: 1.8rem; margin-bottom: 1rem;">Desarrollo de Productos</h3>
+                        <p style="color: var(--text-gray); line-height: 1.8; margin-bottom: 2rem;">
+                            Búsqueda y desarrollo de productos especiales o difíciles de encontrar 
+                            en el mercado nacional.
+                        </p>
+                        <ul style="list-style: none; color: var(--text-gray);">
+                            <li style="padding: 0.5rem 0; position: relative; padding-left: 2rem;">
+                                <span style="position: absolute; left: 0; color: var(--accent-green);">✓</span>
+                                Importación directa
+                            </li>
+                            <li style="padding: 0.5rem 0; position: relative; padding-left: 2rem;">
+                                <span style="position: absolute; left: 0; color: var(--accent-green);">✓</span>
+                                Fabricación especial
+                            </li>
+                            <li style="padding: 0.5rem 0; position: relative; padding-left: 2rem;">
+                                <span style="position: absolute; left: 0; color: var(--accent-green);">✓</span>
+                                Alternativas técnicas
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Servicio 6 -->
+                <div style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(168, 85, 247, 0.1)); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 3rem; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: radial-gradient(circle, rgba(245, 158, 11, 0.3) 0%, transparent 70%); filter: blur(40px);"></div>
+                    <div style="position: relative; z-index: 1;">
+                        <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #f59e0b, #10b981); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem; font-size: 2rem;">
+                            📋
+                        </div>
+                        <h3 style="color: white; font-size: 1.8rem; margin-bottom: 1rem;">Gestión de Inventarios</h3>
+                        <p style="color: var(--text-gray); line-height: 1.8; margin-bottom: 2rem;">
+                            Administración profesional de inventarios para optimizar su capital 
+                            de trabajo y disponibilidad de productos.
+                        </p>
+                        <ul style="list-style: none; color: var(--text-gray);">
+                            <li style="padding: 0.5rem 0; position: relative; padding-left: 2rem;">
+                                <span style="position: absolute; left: 0; color: var(--accent-green);">✓</span>
+                                Stock de seguridad
+                            </li>
+                            <li style="padding: 0.5rem 0; position: relative; padding-left: 2rem;">
+                                <span style="position: absolute; left: 0; color: var(--accent-green);">✓</span>
+                                Reabastecimiento automático
+                            </li>
+                            <li style="padding: 0.5rem 0; position: relative; padding-left: 2rem;">
+                                <span style="position: absolute; left: 0; color: var(--accent-green);">✓</span>
+                                Reportes mensuales
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div style="text-align: center; margin-top: 4rem;">
+                <p style="color: var(--text-gray); font-size: 1.2rem; margin-bottom: 2rem;">
+                    ¿Necesita una solución personalizada para su empresa?
+                </p>
+                <a href="#contact" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan)); color: white; padding: 1rem 2.5rem; border-radius: 30px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;">
+                    Contáctenos
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M5 12h14m-7-7l7 7-7 7" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about" style="background: #f8fafc; padding: 6rem 0; position: relative;">
+        <div class="container">
+            <h2 class="section-title">Acerca de CMC</h2>
+            <p class="section-subtitle">
+                Una década construyendo relaciones sólidas en la industria mexicana
+            </p>
+
+            <!-- Company Story -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 5rem;">
+                <div>
+                    <h3 style="font-size: 2rem; color: var(--primary-dark); margin-bottom: 1.5rem;">Nuestra Historia</h3>
+                    <p style="color: #64748b; line-height: 1.8; margin-bottom: 1.5rem;">
+                        Fundada en 2014, CMC nació con la visión de transformar la forma en que las empresas 
+                        adquieren sus suministros industriales. Comenzamos como una pequeña comercializadora 
+                        en Querétaro y hoy somos líderes en distribución industrial a nivel nacional.
+                    </p>
+                    <p style="color: #64748b; line-height: 1.8; margin-bottom: 1.5rem;">
+                        Nuestra filosofía siempre ha sido simple: ofrecer productos de calidad, servicio 
+                        excepcional y soluciones integrales que agreguen valor real a nuestros clientes.
+                    </p>
+                    <div style="display: flex; gap: 3rem; margin-top: 2rem;">
+                        <div>
+                            <div style="font-size: 2.5rem; font-weight: bold; color: var(--accent-blue);">2014</div>
+                            <div style="color: #64748b;">Año de fundación</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 2.5rem; font-weight: bold; color: var(--accent-blue);">100%</div>
+                            <div style="color: #64748b;">Empresa mexicana</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="position: relative;">
+                    <!-- Company Image -->
+                    <div style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+                        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600" alt="CMC Team" style="width: 100%; height: 400px; object-fit: cover;">
+                        <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); padding: 2rem;">
+                            <h4 style="color: white; font-size: 1.5rem; margin-bottom: 0.5rem;">Centro de Operaciones Querétaro</h4>
+                            <p style="color: rgba(255,255,255,0.8);">Sede principal y centro de distribución</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Values -->
+            <div style="margin-bottom: 5rem;">
+                <h3 style="font-size: 2rem; color: var(--primary-dark); text-align: center; margin-bottom: 3rem;">Nuestros Valores</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                    <div style="text-align: center; padding: 2rem;">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #3b82f6, #06b6d4); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2.5rem;">
+                            🤝
+                        </div>
+                        <h4 style="color: var(--primary-dark); font-size: 1.3rem; margin-bottom: 1rem;">Compromiso</h4>
+                        <p style="color: #64748b; line-height: 1.6;">
+                            Con nuestros clientes, proveedores y colaboradores para construir relaciones de largo plazo.
+                        </p>
+                    </div>
+                    <div style="text-align: center; padding: 2rem;">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #10b981, #06b6d4); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2.5rem;">
+                            ⭐
+                        </div>
+                        <h4 style="color: var(--primary-dark); font-size: 1.3rem; margin-bottom: 1rem;">Calidad</h4>
+                        <p style="color: #64748b; line-height: 1.6;">
+                            Distribuimos únicamente productos de las mejores marcas con los más altos estándares.
+                        </p>
+                    </div>
+                    <div style="text-align: center; padding: 2rem;">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #8b5cf6, #ec4899); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2.5rem;">
+                            💡
+                        </div>
+                        <h4 style="color: var(--primary-dark); font-size: 1.3rem; margin-bottom: 1rem;">Innovación</h4>
+                        <p style="color: #64748b; line-height: 1.6;">
+                            Constantemente mejoramos nuestros procesos y adoptamos nuevas tecnologías.
+                        </p>
+                    </div>
+                    <div style="text-align: center; padding: 2rem;">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #f59e0b, #ef4444); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2.5rem;">
+                            ✅
+                        </div>
+                        <h4 style="color: var(--primary-dark); font-size: 1.3rem; margin-bottom: 1rem;">Confiabilidad</h4>
+                        <p style="color: #64748b; line-height: 1.6;">
+                            Cumplimos nuestras promesas y garantizamos disponibilidad cuando más lo necesita.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why Choose Us -->
+            <div style="background: white; border-radius: 20px; padding: 4rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                <h3 style="font-size: 2rem; color: var(--primary-dark); text-align: center; margin-bottom: 3rem;">¿Por qué elegir CMC?</h3>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem;">
+                    <div style="display: flex; gap: 1.5rem;">
+                        <div style="color: var(--accent-green); font-size: 1.5rem;">✓</div>
+                        <div>
+                            <h4 style="color: var(--primary-dark); margin-bottom: 0.5rem;">Cobertura Nacional</h4>
+                            <p style="color: #64748b;">33 bases estratégicamente ubicadas para garantizar entregas rápidas en todo México.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 1.5rem;">
+                        <div style="color: var(--accent-green); font-size: 1.5rem;">✓</div>
+                        <div>
+                            <h4 style="color: var(--primary-dark); margin-bottom: 0.5rem;">Inventario Amplio</h4>
+                            <p style="color: #64748b;">Más de 10,000 productos en stock de las mejores marcas del mercado.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 1.5rem;">
+                        <div style="color: var(--accent-green); font-size: 1.5rem;">✓</div>
+                        <div>
+                            <h4 style="color: var(--primary-dark); margin-bottom: 0.5rem;">Atención Personalizada</h4>
+                            <p style="color: #64748b;">Equipo especializado que entiende sus necesidades específicas.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 1.5rem;">
+                        <div style="color: var(--accent-green); font-size: 1.5rem;">✓</div>
+                        <div>
+                            <h4 style="color: var(--primary-dark); margin-bottom: 0.5rem;">Tecnología de Vanguardia</h4>
+                            <p style="color: #64748b;">Portal digital para gestión eficiente de pedidos y cotizaciones.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Clients -->
+            <div style="margin-top: 5rem; text-align: center;">
+                <h3 style="font-size: 2rem; color: var(--primary-dark); margin-bottom: 3rem;">Clientes que Confían en Nosotros</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2rem; align-items: center; max-width: 1000px; margin: 0 auto;">
+                    <div style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); font-weight: 600; color: #64748b;">GRUPO BIMBO</div>
+                    <div style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); font-weight: 600; color: #64748b;">Coca-Cola</div>
+                    <div style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); font-weight: 600; color: #64748b;">GAS EXPRESS</div>
+                    <div style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); font-weight: 600; color: #64748b;">Irizar</div>
+                    <div style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); font-weight: 600; color: #64748b;">Operbus</div>
+                    <div style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); font-weight: 600; color: #64748b;">Imbera</div>
+                    <div style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); font-weight: 600; color: #64748b;">AYCO</div>
+                    <div style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); font-weight: 600; color: #64748b;">Canel's</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact" style="background: var(--primary-dark); padding: 6rem 0; position: relative; overflow: hidden;">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Contáctanos</h2>
+            <p class="section-subtitle" style="color: var(--text-gray);">
+                Estamos listos para atender sus necesidades de suministro industrial
+            </p>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 4rem;">
+                <!-- Contact Form -->
+                <div style="background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem; border: 1px solid rgba(255,255,255,0.1);">
+                    <h3 style="color: white; font-size: 1.8rem; margin-bottom: 2rem;">Solicite una Cotización</h3>
+                    <form style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div>
+                            <label style="color: var(--text-gray); display: block; margin-bottom: 0.5rem; font-size: 0.9rem;">Nombre Completo</label>
+                            <input type="text" placeholder="Juan Pérez" style="width: 100%; padding: 1rem; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; color: white; font-size: 1rem;">
+                        </div>
+                        <div>
+                            <label style="color: var(--text-gray); display: block; margin-bottom: 0.5rem; font-size: 0.9rem;">Empresa</label>
+                            <input type="text" placeholder="Nombre de su empresa" style="width: 100%; padding: 1rem; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; color: white; font-size: 1rem;">
+                        </div>
+                        <div>
+                            <label style="color: var(--text-gray); display: block; margin-bottom: 0.5rem; font-size: 0.9rem;">Correo Electrónico</label>
+                            <input type="email" placeholder="correo@empresa.com" style="width: 100%; padding: 1rem; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; color: white; font-size: 1rem;">
+                        </div>
+                        <div>
+                            <label style="color: var(--text-gray); display: block; margin-bottom: 0.5rem; font-size: 0.9rem;">Teléfono</label>
+                            <input type="tel" placeholder="(442) 123-4567" style="width: 100%; padding: 1rem; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; color: white; font-size: 1rem;">
+                        </div>
+                        <div>
+                            <label style="color: var(--text-gray); display: block; margin-bottom: 0.5rem; font-size: 0.9rem;">Mensaje</label>
+                            <textarea placeholder="Describa sus necesidades de productos o servicios..." rows="4" style="width: 100%; padding: 1rem; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; color: white; font-size: 1rem; resize: vertical;"></textarea>
+                        </div>
+                        <button type="submit" style="background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan)); color: white; padding: 1rem 2rem; border: none; border-radius: 30px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;">
+                            Enviar Solicitud
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <!-- Office Info -->
+                    <div style="background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(6, 182, 212, 0.1)); border-radius: 20px; padding: 2.5rem; border: 1px solid rgba(255,255,255,0.1); margin-bottom: 2rem;">
+                        <h4 style="color: white; font-size: 1.5rem; margin-bottom: 1.5rem;">Oficina Central</h4>
+                        <div style="display: flex; flex-direction: column; gap: 1rem;">
+                            <div style="display: flex; align-items: start; gap: 1rem;">
+                                <div style="color: var(--accent-cyan); font-size: 1.2rem;">📍</div>
+                                <div>
+                                    <p style="color: white; font-weight: 500;">Dirección</p>
+                                    <p style="color: var(--text-gray); line-height: 1.6;">
+                                        Parque Industrial Advance, Bodega #55<br>
+                                        Lateral Norte Autopista 57 México - Qro KM 201+100<br>
+                                        El Marqués, Querétaro
+                                    </p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <div style="color: var(--accent-cyan); font-size: 1.2rem;">📞</div>
+                                <div>
+                                    <p style="color: white; font-weight: 500;">Teléfono</p>
+                                    <p style="color: var(--text-gray);">442-123-4567</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <div style="color: var(--accent-cyan); font-size: 1.2rem;">✉️</div>
+                                <div>
+                                    <p style="color: white; font-weight: 500;">Email</p>
+                                    <p style="color: var(--text-gray);">info@cmc.com.mx</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Business Hours -->
+                    <div style="background: rgba(255,255,255,0.05); border-radius: 20px; padding: 2.5rem; border: 1px solid rgba(255,255,255,0.1); margin-bottom: 2rem;">
+                        <h4 style="color: white; font-size: 1.5rem; margin-bottom: 1.5rem;">Horario de Atención</h4>
+                        <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                            <div style="display: flex; justify-content: space-between;">
+                                <span style="color: var(--text-gray);">Lunes - Viernes</span>
+                                <span style="color: white;">8:00 AM - 6:00 PM</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span style="color: var(--text-gray);">Sábado</span>
+                                <span style="color: white;">9:00 AM - 2:00 PM</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span style="color: var(--text-gray);">Domingo</span>
+                                <span style="color: white;">Cerrado</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Contact -->
+                    <div style="background: linear-gradient(135deg, var(--accent-green), var(--accent-cyan)); border-radius: 20px; padding: 2rem; text-align: center;">
+                        <h4 style="color: white; font-size: 1.3rem; margin-bottom: 1rem;">¿Necesita atención inmediata?</h4>
+                        <p style="color: rgba(255,255,255,0.9); margin-bottom: 1.5rem;">
+                            Nuestro equipo está listo para atenderle
+                        </p>
+                        <a href="tel:4421234567" style="display: inline-flex; align-items: center; gap: 0.5rem; background: white; color: var(--primary-dark); padding: 0.8rem 2rem; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">
+                            <span>📞</span>
+                            Llamar Ahora
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map Section -->
+            <div style="margin-top: 4rem; background: rgba(255,255,255,0.05); border-radius: 20px; padding: 2rem; border: 1px solid rgba(255,255,255,0.1);">
+                <h3 style="color: white; font-size: 1.8rem; margin-bottom: 2rem; text-align: center;">Nuestra Ubicación</h3>
+                <div style="background: rgba(255,255,255,0.1); border-radius: 15px; height: 400px; display: flex; align-items: center; justify-content: center;">
+                    <p style="color: var(--text-gray); text-align: center;">
+                        <span style="font-size: 3rem; display: block; margin-bottom: 1rem;">🗺️</span>
+                        Mapa interactivo<br>
+                        Parque Industrial Advance, Querétaro
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #0a0e17; padding: 3rem 0; border-top: 1px solid rgba(255,255,255,0.1);">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
+                <!-- Company Info -->
+                <div>
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                        <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 40px; height: 40px;">
+                            <g transform="translate(2, 5) scale(0.9)">
+                                <circle cx="22" cy="22" r="20" stroke="white" stroke-width="2" fill="none"/>
+                                <path d="M 30 14 A 11 11 0 1 0 30 30" stroke="white" stroke-width="5" fill="none" stroke-linecap="square"/>
+                                <path d="M 15 22 L 20 27 L 30 17" stroke="white" stroke-width="4" fill="none" stroke-linecap="square" stroke-linejoin="miter"/>
+                                <path d="M 38 14 L 38 30" stroke="white" stroke-width="4" fill="none" stroke-linecap="square"/>
+                                <path d="M 30 17 L 38 22" stroke="white" stroke-width="4" fill="none" stroke-linecap="square"/>
+                            </g>
+                        </svg>
+                        <span style="color: white; font-size: 1.5rem; font-weight: bold;">CMC</span>
+                    </div>
+                    <p style="color: var(--text-gray); line-height: 1.6;">
+                        Comercializadora para la Industria de Manufactura y Construcción. 
+                        Líder en distribución de suministros industriales en México.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 style="color: white; margin-bottom: 1.5rem;">Enlaces Rápidos</h4>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.8rem;">
+                        <li><a href="#home" style="color: var(--text-gray); text-decoration: none; transition: color 0.3s ease;">Inicio</a></li>
+                        <li><a href="#products" style="color: var(--text-gray); text-decoration: none; transition: color 0.3s ease;">Productos</a></li>
+                        <li><a href="#services" style="color: var(--text-gray); text-decoration: none; transition: color 0.3s ease;">Servicios</a></li>
+                        <li><a href="#about" style="color: var(--text-gray); text-decoration: none; transition: color 0.3s ease;">Nosotros</a></li>
+                        <li><a href="#contact" style="color: var(--text-gray); text-decoration: none; transition: color 0.3s ease;">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 style="color: white; margin-bottom: 1.5rem;">Servicios</h4>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.8rem;">
+                        <li style="color: var(--text-gray);">Logística y Entrega</li>
+                        <li style="color: var(--text-gray);">Asesoría Técnica</li>
+                        <li style="color: var(--text-gray);">Portal Digital</li>
+                        <li style="color: var(--text-gray);">Proyectos Especiales</li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 style="color: white; margin-bottom: 1.5rem;">Contacto</h4>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.8rem;">
+                        <li style="color: var(--text-gray);">📞 442-123-4567</li>
+                        <li style="color: var(--text-gray);">✉️ info@cmc.com.mx</li>
+                        <li style="color: var(--text-gray);">📍 Querétaro, México</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center;">
+                <p style="color: var(--text-gray); font-size: 0.9rem;">
+                    © 2024 CMC - Comercializadora para la Industria de Manufactura y Construcción. Todos los derechos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
 
     <script>
         // Preloader
